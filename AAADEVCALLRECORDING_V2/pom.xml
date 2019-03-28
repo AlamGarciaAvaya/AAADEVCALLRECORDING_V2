@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+   <groupId>com.avaya.workflow</groupId>
+   <artifactId>sdk</artifactId>
+    <version>3.4.0.0.32022</version>
+  </parent>
+  
+  <groupId>service</groupId>
+  <artifactId>AAADEVCALLRECORDING_V2</artifactId>
+  <version>1.0.0.0.0</version>
+  <packaging>pom</packaging>
+  
+  <name>${project.artifactId}</name>
+  <description>${project.artifactId}</description>
+  <url>http://www.avaya.com/</url>
+  
+  <properties>
+     <serviceName>AAADEVCALLRECORDING_V2-tasks</serviceName>
+     <serviceVersion>1.0.0.0.0</serviceVersion>
+     <checkstyle.version>2.2</checkstyle.version>
+  </properties>
+  
+    <modules>
+		<module>tasks</module>
+ 		<module>tasks-svar</module>
+ 	</modules>
+ 
+</project>

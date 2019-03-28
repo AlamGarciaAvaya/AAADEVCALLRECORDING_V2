@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service xmlns="http://archiveschemas.aus.avaya.com/properties"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://archiveschemas.aus.avaya.com/properties properties.xsd"
+	name="${serviceName}" version="${serviceVersion}" application="${serviceName}-${serviceVersion}">
+	<smgr>
+		<description>My Service</description>
+		<fs_component>true</fs_component>		
+	</smgr>
+	<service_mgmt_viewable>false</service_mgmt_viewable>
+	<load_as_bundle_view>true</load_as_bundle_view>
+</service>

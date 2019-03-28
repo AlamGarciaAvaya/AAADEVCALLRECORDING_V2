@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service xmlns="http://archiveschemas.aus.avaya.com/properties"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://archiveschemas.aus.avaya.com/properties properties.xsd"
+	name="${serviceName}" version="${serviceVersion}" application="${serviceName}-${serviceVersion}">
+	<smgr>
+		<description>My Task</description>
+		<fs_component>true</fs_component>
+		
+		<attribute name="firstAttribute">
+			<value>firstValue</value>
+			<admin_changeable>true</admin_changeable>
+		</attribute>
+		
+		<attribute name="secondAttribute">
+			<value>secondValue</value>
+			<admin_changeable>false</admin_changeable>
+		</attribute>
+		
+		<attribute name="thirdAttribute">
+			<value></value>
+			<admin_changeable>true</admin_changeable>
+		</attribute>
+	</smgr>
+</service>

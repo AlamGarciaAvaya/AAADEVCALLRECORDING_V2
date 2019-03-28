@@ -1,0 +1,211 @@
+﻿{
+  "name": "My Tasks-from-service.AAADEVCALLRECORDING_V2",
+  "categories":
+[
+  {
+        "name": "AAA Call Recording",
+        "mTypes": 
+         [
+            {
+                "name": "AAA Call Recording",
+                "snapinVersion": "3.0",
+                "displayName": "AAA Call Recordong",
+                "tag": "AAACALLRECORDING",
+                "svg": "microphone",
+                "helpUrl": "AAADEVCALLRECORDING.html",
+                "tile": "green",
+                "serviceName": "CollabDesigner", 
+                "custom": "false",
+                "comm": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVCALLRECORDING_V2.CallRecordingModel",
+                "executionClass": "service.AAADEVCALLRECORDING_V2.CallRecordingExecution",
+                "mapping": "[\"input\", \"output\"]",
+                "displayProperties": "[{\"mapping\": [{\"Recorded Party\": \"recordedParty\"}]}, {\"properties\": [\"recordedParty\"]}]",
+                "properties": [
+                  {
+                      "name": "fileUri",
+                      "displayPropName": "File URI",
+                      "type": "String",
+                      "controlType": "multilineText",
+                      "textLines" : "7",
+                      "modelName": "setFileUri",
+                      "mapping": "fileUri"
+                   },
+                   {
+                      "name": "recordedParty",
+                      "displayPropName": "Recorded Party",
+                      "type": "String",
+                      "controlType": "combo",
+                      "modelName": "setRecordedParty",
+                      "filler": "getRecordedParties",
+                      "fillerModel": "service.AAADEVCALLRECORDING_V2.RecordParticipantPropertyHandler",
+                      "mapping": "recordedParty"
+                   },
+                   {
+                      "name": "maxDuration",
+                      "displayPropName": "Maximum Duration (ms)",
+                      "type": "String",
+                      "controlType": "text",
+                      "modelName": "setMaxDuration",
+                      "mapping": "maxDuration"
+                   },
+                   {
+                      "name": "terminationKey",
+                      "displayPropName": "Termination Key",
+                      "type": "String",
+                      "controlType": "text",
+                      "modelName": "setTerminationKey",
+                      "mapping": "terminationKey"
+                   },
+                   {
+                      "name": "fileNamePattern",
+                      "displayPropName": "Recording File Name Pattern",
+                      "type": "String",
+                      "controlType": "combo",
+                      "modelName": "setFileNamePattern",
+                      "filler": "getFileNamePatterns",
+                      "fillerModel": "service.AAADEVCALLRECORDING_V2.RecordParticipantPropertyHandler"
+                   },
+                   {
+                      "name": "retrievalUrl",
+                      "displayPropName": "Retrieval URL",
+                      "type": "String",
+                      "controlType": "multilineText",
+                      "textLines" : "7",
+                      "modelName": "setRetrievalUrl",
+                      "mapping": "retrievalUrl"
+                   },
+                   {
+                      "name": "async",
+                      "displayPropName": "Wait until the recording is completed",
+                      "type": "String",
+                      "controlType": "checkbox",
+                      "filler": "getInstance.booleanType",
+                         "fillerModel": "service.AAADEVCALLRECORDING_V2.util.FillerUtil",
+                      "modelName": "setAsync"
+                   }				 
+                  ],
+                "input_schema": "{ 
+                      title: RecordParticipantInputSchema,
+                      type: object,
+                      properties: {
+                          ucid: {
+                              type: string
+                          },
+                          fileUri: {
+                              type: string
+                          },
+                          recordedParty: {
+                              type: string
+                          },
+                          maxDuration: {
+                              type: string
+                          },
+                          terminationKey: {
+                              type: string
+                          },
+                          retrievalUrl: {
+                              type: string
+                          }
+                          
+                      }
+                  }",
+                  "output_schema": "{ 
+                      title:RecordParticipantOutputSchema,
+                      type:object,
+                      properties:{
+                          status:{ type:string },
+                          cause:{ type:string },
+                          retrievalUrl:{ type:string },
+                          urlFirstAudio : {type:string },
+                          urlSecondAudio : {type:string }
+                      }
+                  }"
+            },{
+                "name": "AAA Duration",
+                "snapinVersion": "3.0",
+              "displayName": "AAA Duration",
+                "tag": "PeriodTimeOfEvent",
+                "svg": "rewind-time",
+                "helpUrl": "AAADuration.html",
+                "tile": "gold",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVPERIOD.PeriodModel",
+                "executionClass": "service.AAADEVPERIOD.PeriodExecution",
+      "mapping": "[\"input\", \"output\"]",
+                "properties": [
+                ],
+           "input_schema": "{
+                 title: InputPeriodSchema,
+                 type: object,
+                 properties: {
+                     firstTimeOfEvent: {
+                         type: string
+                     },
+                        secondTimeOfEvent: {
+                         type: string
+                     }
+                 }
+           }",
+                "output_schema": "{
+                        title: OutputPeriodSchema,
+                        type: object,
+                        properties: {
+                            duration: {
+                                type: string
+                            }
+                        }
+                }"
+            },
+            {
+             "name": "AAA Audio MIXER",
+             "snapinVersion": "3.0",
+   "displayName": "AAA Audio MIXER",
+             "tag": "AAAMIXER",
+             "svg": "fade-buttons",
+             "helpUrl": "AAAAudioMixer.html",
+             "tile": "gold",
+             "serviceName": "CollabDesigner",
+             "custom": "true",
+             "nodeType": "activity",
+             "modelClass": "service.AAADEVMIXER.MixerModel",
+             "executionClass": "service.AAADEVMIXER.MixerExecution",
+   "mapping": "[\"input\", \"output\"]",
+             "properties": [
+             ],
+        "input_schema": "{
+              title: InputSchema,
+              type: object,
+              properties: {
+                  urlFirstAudio: {
+                      type: string
+                     },
+                     urlSecondAudio: {
+                         type: string
+                     }
+ 
+              }
+        }",
+             "output_schema": "{
+                     title: OutputSchema,
+                     type: object,
+                     properties: {
+                         urlOut: {
+                             type: string
+                         },
+                         status: {
+                             type: string
+                         }
+                     }
+             }"
+         }
+  
+          
+      
+        ]
+  }
+]
+}

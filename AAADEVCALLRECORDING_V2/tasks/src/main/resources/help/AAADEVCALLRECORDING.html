@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="copyright" content="(C) Copyright 2005" />
+    <meta name="DC.rights.owner" content="(C) Copyright 2005" />
+    <meta name="DC.Type" content="concept" />
+    <meta name="DC.Title" content="Record Participant" />
+    <meta name="DC.subject" content="Record Participant task, tasks, Record Participant" />
+    <meta name="keywords" content="Record Participant task, tasks, Record Participant" />
+    <meta name="DC.Format" content="XHTML" />
+    <meta name="DC.Identifier" content="GUID-C241E2D9-C4A6-49FA-B5CB-46F86798E204" />
+    <meta name="DC.Language" content="en-us" />
+    <link rel="stylesheet" type="text/css" href="commonltr.css" />
+    <link rel="stylesheet" type="text/css" href="av-commonltr.css" />
+    <title>AAA Call Recording</title>
+</head>
+
+<h1 style="color:rgb(204, 0, 82)">Call Recording</h1>
+
+<div class="body conbody">
+    <div class="section">
+        <h2 class="title sectiontitle">Definición de la tarea</h2>
+
+        <p class="p">
+            La tarea Grabar conversación habilita / comienza a grabar la llamada. Tenga en cuenta que la tarea Grabar participante no puede funcionar en la etapa de alerta de llamada, por ejemplo, no se puede colocar inmediatamente después de Permitir llamada, Reenviar
+            llamada, etc.</p>
+        <p class="p">
+            Esta es una tarea síncrona por defecto. Puede ser una tarea asíncrona si se selecciona la casilla de verificación "Esperar hasta que se complete la grabación".</p>
+    </div>
+
+    <div class="section">
+        <h2 class="title sectiontitle">Propiedades de la tarea</h2>
+
+        <ul class="ul">
+            <li class="li">
+                <p class="p">Ruta para guardar archivo (obligatoria) El URI del archivo de onda grabado (.wav). Esta es la ubicación donde se grabará la grabación después de que se complete la grabación.</p>
+                <div class="p">El esquema de URI debe ser uno de los siguientes http: //, https: //. Al no especificar el nombre del archivo en el URI del archivo la tarea lo generará automáticamente y se agregará al URI del archivo. A continuación se muestra un ejemplo
+                    de cada esquema de URI:
+                    <ul class="sl simple">
+                        <li class="sli">2. Http URI: <span class="ph filepath">"http://www.mycompany.com/recordings/"</span> ;</li>
+                        <li class="sli">3. Https URI: <span class="ph filepath">"https://www.mycompany.com/recordings/"</span> Tenga en cuenta que el certificado de confianza de la infraestructura de clave pública (PKI) del servidor HTTP debe estar instalado en el servidor
+                            de medios;</li>
+                    </ul>
+                    <p class="p">
+                        Consulte la documentación de Avaya Aura Media Server para obtener más detalles sobre la administración del almacén de contenido, o para obtener información sobre los formatos de archivo wav compatibles (por ejemplo, mono muestreado de 16 bits a 8 kHz)
+                        y certificado de confianza PKI.</p>
+                </div>
+            </li>
+            <li class="li">
+                <p class="p">Duración máxima (Opcional) Especifique la duración máxima de grabación en milisegundos. El valor predeterminado es 3600000ms si no está configurado.</p>
+            </li>
+            <li class="li">
+                <p class="p">Definir tecla para terminar grabación (Optional) Defina la tecla disponible en el teclado que el usuario puede presionar para detener la grabación. Las claves válidas son 0 a 9, * y #.</p>
+            </li>
+            <li class="li">
+                <p class="p">Nombre del archivo (Optional) Seleccione el patrón de nombre de archivo de grabación. Fechay hora_CallingPartyNumber_CalledPartyNumber_CallId ejemplo: 20190111082533_2304_2305_00003002421547220252.wav</p>
+            </li>
+            <li class="li">
+                <p class="p">Espere hasta que se complete la grabación. Seleccione si desea continuar con la siguiente tarea solo después de que se complete la grabación. En algún escenario, el archivo de grabación no necesita ser procesado por este flujo de trabajo
+                    en tiempo real, por lo que el Registro La tarea del participante no tiene que esperar hasta que la grabación real esté completamente terminada.</p>
+            </li>
+    </div>
+
+    <div class="section">
+        <h2 class="title sectiontitle">Errores</h2>
+
+        <p class="p">Los errores se pueden manejar mediante el uso de eventos de límite de error.</p>
+    </div>
+
+</div>
+</body>
+
+</html>

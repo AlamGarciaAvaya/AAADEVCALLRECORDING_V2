@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <delete file="C:\Users\umansilla\workspace\Dynamic Tasks\AAADEVCALLRECORDING_V2\tasks/target/AAADEVCALLRECORDING_V2-tasks-1.0.0.0.0.jar" quiet="true"/>
+  <jar basedir="C:\Users\umansilla\workspace\Dynamic Tasks\AAADEVCALLRECORDING_V2\tasks/target/build" defaultexcludes="No" destfile="C:\Users\umansilla\workspace\Dynamic Tasks\AAADEVCALLRECORDING_V2\tasks/target/AAADEVCALLRECORDING_V2-tasks-1.0.0.0.0.jar"/>
+</target>
+</project>
